@@ -3,25 +3,19 @@
   
   
 import json
-  
-# Opening JSON file
-f = open('.github/py_repo_tools/repo_config.json')
-  
-# returns JSON object as 
-# a dictionary
-config = json.load(f)
-  
 
-# Define the filename here you want to replace content in
-FileName = "README.md"
+with open('.github/py_repo_tools/repo_config.json') as f:
+    # returns JSON object as 
+    # a dictionary
+    config = json.load(f)
 
-Text_To_Replace = config['Text_To_Replace']
 
-Text_To_Replace_With = config['Text_To_Replace_With']
+    # Define the filename here you want to replace content in
+    FileName = "README.md"
 
-# Closing file
-f.close()
+    Text_To_Replace = config['Text_To_Replace']
 
+    Text_To_Replace_With = config['Text_To_Replace_With']
 
 # Open the File
 with open(FileName, 'r') as f:
