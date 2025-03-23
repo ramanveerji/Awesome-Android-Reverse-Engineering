@@ -1,26 +1,20 @@
 
 import json
-  
-# Opening JSON file
-f = open('.github/py_repo_tools/repo_config.json')
-  
-# returns JSON object as 
-# a dictionary
-config = json.load(f)
-  
 
-# Define the filename here you want to replace content in
-FileName = ".github/SECURITY.md"
+with open('.github/py_repo_tools/repo_config.json') as f:
+    # returns JSON object as 
+    # a dictionary
+    config = json.load(f)
 
-# Replace with string
-Text_To_Replace = "example@hello.com"
 
-# Replace with JSON value
-Text_To_Replace_With = config['EMAIL']
+    # Define the filename here you want to replace content in
+    FileName = ".github/SECURITY.md"
 
-# Closing file
-f.close()
+    # Replace with string
+    Text_To_Replace = "example@hello.com"
 
+    # Replace with JSON value
+    Text_To_Replace_With = config['EMAIL']
 
 # Open the File
 with open(FileName, 'r') as f:
